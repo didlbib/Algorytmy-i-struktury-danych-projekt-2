@@ -1,51 +1,50 @@
 # AISD2
-#  Wyciągi i góry
+# Lifts and mountains
 
-## Opis problemu
-Celem zadania jest znalezienie **najkrótszej trasy** przez dany teren opisany jako prostokątna siatka pól.  
-Każde pole ma wysokość wyrażoną nieujemną liczbą całkowitą.  
+## Problem description
+The goal of the task is to find the **shortest route** through a given terrain described as a rectangular grid of cells. 
+Each cell has a height expressed as a non-negative integer.  
 
-Czas przejścia między polami zależy od różnicy wysokości:
-- ⬆️ **Jeżeli A > B** (wchodzimy wyżej): czas = `A - B + 1` minut.  
-- ⬇️ **Jeżeli A ≤ B** (schodzimy lub idziemy po równym): czas = `1` minuta.  
+The time of moving between cells depends on the height difference:
+- ⬆️ **If A > B** (we go higher): time = `A - B + 1` minutes.`  
+- ⬇️ **If A ≤ B** (we go down or move on flat ground): time = `1` minute.  
 
-Możemy poruszać się tylko na pola sąsiadujące bokami (maksymalnie cztery kierunki).  
-Nie możemy wychodzić poza mapę.  
+We can move only to edge-adjacent cells (at most four directions).
+We cannot leave the map.
 
-Dodatkowo w obszarze mogą znajdować się **wyciągi**:
-- Każdy wyciąg prowadzi z jednego pola do innego (jednokierunkowo).  
-- Skorzystanie z wyciągu zajmuje określony czas.  
-- Wyciąg kursuje co pewien ustalony interwał minutowy. Jeśli dotrzemy do pola startowego w czasie `t`, a najbliższy kurs przypada w czasie `k`, musimy czekać `(k - t)` minut, a następnie doliczamy czas przejazdu.  
+Additionally, there may be **lifts** in the area:
+- Each lift leads from one cell to another (one-way)  
+- Using a lift takes a specified amount of time.  
+- The lift operates at a fixed minute interval. If we reach the starting cell at time `t`, and the nearest ride is at time `k`, we must wait `(k - t)` minutes, and then add the travel time. 
 
-Przykład:  
-Jeżeli jesteśmy w polu startowym wyciągu w **8. minucie**, wyciąg kursuje co **5 minut**, a przejazd trwa **3 minuty**, to dotrzemy do pola docelowego w **13. minucie** (8 + 2 czekania + 3 jazdy).
-
----
-
-## 📥 Wejście
-Na wejściu podane są kolejno:
-1. Szerokość i wysokość mapy.  
-2. Pozycja startowa (kolumna, wiersz).  
-3. Pozycja docelowa (kolumna, wiersz).  
-4. Liczba wyciągów.  
-5. Opisy wyciągów – dla każdego:  
-   - pozycja startowa (kolumna, wiersz),  
-   - pozycja docelowa (kolumna, wiersz),  
-   - czas przejazdu w minutach,  
-   - interwał odjazdu (kursuje co X minut).  
-6. Wysokości wszystkich pól mapy.  
-
-Wszystkie wartości są nieujemne.
+Example:
+If we are at the lift’s starting cell at **minute 8**, the lift runs every **5 minutes**, and the ride lasts **3 minutes**, then we will reach the destination cell at **minute 13** (8 + 2 waiting + 3 riding).
 
 ---
 
-## 📤 Wyjście
-Należy wypisać **najkrótszy czas** potrzebny, aby dotrzeć z punktu startowego do punktu docelowego.
+## 📥 Input
+The input provides, in order:
+1. The width and height of the map.
+2. The starting position (column, row).
+3. The destination position (column, row).  
+4. The number of lifts.  
+5. Descriptions of the lifts – for each:
+   - starting position (column, row),  
+   - destination position (column, row), 
+   - travel time in minutes,  
+   - departure interval (runs every X minutes).  
+6. Heights of all map cells.  
+
+All values are non-negative.
+---
+
+## 📤 Output
+You must print the **shortest time** needed to reach the destination point from the starting point.
 
 ---
 
-## 🔍 Przykład 1
-**Wejście**
+## 🔍 Example 1
+**Input**
 
 9 8 0 0 8 7 0
 0 0 0 0 0 0 0 0 8 
@@ -57,7 +56,7 @@ Należy wypisać **najkrótszy czas** potrzebny, aby dotrzeć z punktu startoweg
 0 9 9 9 9 1 9 9 0 
 8 0 0 0 0 0 0 0 0 
 
-**Wyjście**
+**Output**
 
 18
 
