@@ -46,7 +46,7 @@ You must print the **shortest time** needed to reach the destination point from 
 ## 🔍 Example 1
 **Input**
 
-9 8 0 0 8 7 0 
+9 8 0 0 8 7 0<br>
 0 0 0 0 0 0 0 0 8  
 
 0 9 9 9 9 9 9 9 0  
