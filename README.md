@@ -60,3 +60,5 @@ You must print the **shortest time** needed to reach the destination point from 
 
 18
 
+More sample tests can be found in `wyc_i_gor.zip`
+
